@@ -57,6 +57,7 @@ write.table(mapout,paste(args[4],'.ihsmapfile',sep=""),quote=F,row.names=F,col.n
 # to use the XOR operation to quickly match alleles (instead of NOT XOR)
 # the which values are inversed from above representation (in map output file)
 # hence 1 is A1, 0 is A2
+mapfile$which <- 0
 mapfile[mapfile$A1==mapfile$aa,]$which <- 1
 mapfile[mapfile$A2==mapfile$aa,]$which <- 0
 nn  <- ncol(mapfile)
